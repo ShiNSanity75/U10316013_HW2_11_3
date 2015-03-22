@@ -8,4 +8,16 @@ public class CheckingAccount extends Account {
 	public CheckingAccount(int newID, double newBalance,double newAnnualInterestRate) {
 		super(newID,newBalance,newAnnualInterestRate);
 	}
+	
+	double overdraftLimit = -10000;
+	
+	@Override
+	double withdraw(double amount) {
+		//if overdraft limit return 0
+		if(balance - amount < overdraftLimit) {
+			return 0;
+		}else {
+			return balance -= amount;
+		}
+	}
 }
