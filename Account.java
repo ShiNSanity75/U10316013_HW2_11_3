@@ -18,4 +18,34 @@ pubilc class Account {
 		id = newID;
 		balance = newBalance;
 	}
+	
+	//get method for id
+	public int getID() {
+		return id;
+	}
+	
+	//set method for id
+	public void setId(int newId) {
+		id = newId;
+	}
+	
+	//get method for balance
+	public double getBalance() {
+		return balance;
+	}
+	
+	//set method for balance
+	public void setBalance(double newBalanced) {
+		balance = newBalance;
+	}
+	
+	//get method for annualInterestRate
+	public double getAnnualInterestRate() {
+		return annualInterestRate;
+	}
+	
+	//set method for annualInterestRate
+	public void setAnnualInterestRate(double newAnnualInterestRat) {
+		annualInterestRate = newAnnualInterestRat;
+	}
 }
