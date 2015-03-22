@@ -66,7 +66,11 @@ pubilc class Account {
 	
 	//withdraw a specified amount from the account
 	double withdraw(double amount) {
-		return balance -= amount;
+		if(amount > balance) {
+			System.out.println("You cannot withdraw more then balance");
+		}else {
+			return balance -= amount;
+		}
 	}
 	
 	//deposit a specified amount to the account
