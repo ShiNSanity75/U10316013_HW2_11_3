@@ -1,10 +1,10 @@
 import java.util.Date;
 
-pubilc class Account {
+public class Account {
 	protected int id; //ID for the account
 	protected double balance; //Balance for the account
 	protected double annualInterestRate; //Store the current interest rate
-	protected Date dateCreated; //stores the date when the account was created
+	java.util.Date dateCreated = new java.util.Date(); //stores the date when the account was created
 	
 	//no-arg constructor
 	public Account() {
@@ -13,10 +13,11 @@ pubilc class Account {
 		annualInterestRate = 0;
 	}
 	
-	//constructor with the specified id and initial balance
-	public Account(int newID, double newBalance) {
+	//constructor with the specified id , initial balance and newAnnualInterestRate
+	public Account(int newID, double newBalance,double newAnnualInterestRate) {
 		id = newID;
 		balance = newBalance;
+		annualInterestRate = newAnnualInterestRate;
 	}
 	
 	//get method for id
@@ -35,7 +36,7 @@ pubilc class Account {
 	}
 	
 	//set method for balance
-	public void setBalance(double newBalanced) {
+	public void setBalance(double newBalance) {
 		balance = newBalance;
 	}
 	
@@ -61,20 +62,23 @@ pubilc class Account {
 	
 	//return monthly interest
 	double getMonthlyInterest() {
-		return balance * monthlyInterestRate;
+		return balance * getMonthlyInterestRate();
 	}
 	
 	//withdraw a specified amount from the account
 	double withdraw(double amount) {
-		if(amount > balance) {
-			System.out.println("You cannot withdraw more then balance");
-		}else {
 			return balance -= amount;
-		}
 	}
 	
 	//deposit a specified amount to the account
 	double deposit(double amount) {
 		return balance += amount;
+	}
+	
+	// Create toString method
+	public String toString(){
+		 return "ID: " + getID() + "\n" + "Balance1: " + withdraw(2500) + "\n" +
+			"Balance2: " + deposit(3000) + "\n" + "Monthly Interest: " + getMonthlyInterest() +
+			"\nDate:" + getDateCreated();
 	}
 }
