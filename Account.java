@@ -48,4 +48,9 @@ pubilc class Account {
 	public void setAnnualInterestRate(double newAnnualInterestRat) {
 		annualInterestRate = newAnnualInterestRat;
 	}
+	
+	//get method for dateCreated
+	public Date getDateCreated() {
+		 return dateCreated;
+	}
 }
