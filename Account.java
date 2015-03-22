@@ -53,4 +53,24 @@ pubilc class Account {
 	public Date getDateCreated() {
 		 return dateCreated;
 	}
+	
+	//return the monthly interest rate
+	double getMonthlyInterestRate() {
+		return annualInterestRate / 12;
+	}
+	
+	//return monthly interest
+	double getMonthlyInterest() {
+		return balance * monthlyInterestRate;
+	}
+	
+	//withdraw a specified amount from the account
+	double withdraw(double amount) {
+		return balance -= amount;
+	}
+	
+	//deposit a specified amount to the account
+	double deposit(double amount) {
+		return balance += amount;
+	}
 }
