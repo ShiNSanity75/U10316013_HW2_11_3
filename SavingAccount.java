@@ -18,4 +18,10 @@ public class SavingAccount extends Account {
 			return balance -= amount;
 		}
 	}
+	
+	// Create toString method
+	@Override
+	public String toString(){
+		return "ID: " + getID() + "\nBalance: " + withdraw(30000) + "\nDate:" + getDateCreated();
+	}
 }
